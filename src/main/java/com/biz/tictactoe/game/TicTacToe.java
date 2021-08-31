@@ -61,9 +61,20 @@ public class TicTacToe {
             putVal();
 
     }
+    static boolean win() {
+        return ((BOARD[0][0] + BOARD[0][1] + BOARD[0][2] == player * 3)
+                || (BOARD[1][0] + BOARD[1][1] + BOARD[1][2] == player * 3)
+                || (BOARD[2][0] + BOARD[2][1] + BOARD[2][2] == player * 3)
+                || (BOARD[0][0] + BOARD[1][0] + BOARD[2][0] == player * 3)
+                || (BOARD[0][1] + BOARD[1][1] + BOARD[2][1] == player * 3)
+                || (BOARD[0][2] + BOARD[1][2] + BOARD[2][2] == player * 3)
+                || (BOARD[0][0] + BOARD[1][1] + BOARD[2][2] == player * 3)
+                || (BOARD[2][0] + BOARD[1][1] + BOARD[0][2] == player * 3));
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to tic tac toe game");
         initBoard();
         putVal();
+        win();
     }
 }
